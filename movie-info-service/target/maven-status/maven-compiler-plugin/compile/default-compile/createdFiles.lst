@@ -1,0 +1,3 @@
+com/example/movieinfoservice/models/Movie.class
+com/example/movieinfoservice/resources/MovieResource.class
+com/example/movieinfoservice/MovieInfoServiceApplication.class
