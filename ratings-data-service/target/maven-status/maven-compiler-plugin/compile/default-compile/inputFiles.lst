@@ -1,3 +1,4 @@
-/Users/ianperfitt/Documents/Full-Stack-Practice-Workspace/Spring-Microservices-Workspace/ratings-data-service/src/main/java/com/example/ratingsdataservice/models/Rating.java
-/Users/ianperfitt/Documents/Full-Stack-Practice-Workspace/Spring-Microservices-Workspace/ratings-data-service/src/main/java/com/example/ratingsdataservice/resources/RatingsResource.java
-/Users/ianperfitt/Documents/Full-Stack-Practice-Workspace/Spring-Microservices-Workspace/ratings-data-service/src/main/java/com/example/ratingsdataservice/RatingsDataServiceApplication.java
+/Users/ianperfitt/Desktop/Movie-Catalog-Microservice-App/ratings-data-service/src/main/java/com/example/ratingsdataservice/models/Rating.java
+/Users/ianperfitt/Desktop/Movie-Catalog-Microservice-App/ratings-data-service/src/main/java/com/example/ratingsdataservice/RatingsDataServiceApplication.java
+/Users/ianperfitt/Desktop/Movie-Catalog-Microservice-App/ratings-data-service/src/main/java/com/example/ratingsdataservice/models/UserRating.java
+/Users/ianperfitt/Desktop/Movie-Catalog-Microservice-App/ratings-data-service/src/main/java/com/example/ratingsdataservice/resources/RatingsResource.java

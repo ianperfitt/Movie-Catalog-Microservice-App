@@ -1,3 +1,5 @@
 com/example/ratingsdataservice/RatingsDataServiceApplication.class
 com/example/ratingsdataservice/resources/RatingsResource.class
+com/example/ratingsdataservice/models/UserRating.class
 com/example/ratingsdataservice/models/Rating.class
+com/example/ratingsdataservice/models/Rating$UserRating.class
