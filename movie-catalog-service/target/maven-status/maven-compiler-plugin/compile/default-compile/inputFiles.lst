@@ -1,5 +1,6 @@
-/Users/ianperfitt/Documents/Full-Stack-Practice-Workspace/Spring-Microservices-Workspace/movie-catalog-service/src/main/java/com/example/moviecatalogservice/models/Rating.java
-/Users/ianperfitt/Documents/Full-Stack-Practice-Workspace/Spring-Microservices-Workspace/movie-catalog-service/src/main/java/com/example/moviecatalogservice/models/CatalogItem.java
-/Users/ianperfitt/Documents/Full-Stack-Practice-Workspace/Spring-Microservices-Workspace/movie-catalog-service/src/main/java/com/example/moviecatalogservice/resources/MovieCatalogResource.java
-/Users/ianperfitt/Documents/Full-Stack-Practice-Workspace/Spring-Microservices-Workspace/movie-catalog-service/src/main/java/com/example/moviecatalogservice/models/Movie.java
-/Users/ianperfitt/Documents/Full-Stack-Practice-Workspace/Spring-Microservices-Workspace/movie-catalog-service/src/main/java/com/example/moviecatalogservice/MovieCatalogServiceApplication.java
+/Users/ianperfitt/Desktop/Movie-Catalog-Microservice-App/movie-catalog-service/src/main/java/com/example/moviecatalogservice/models/CatalogItem.java
+/Users/ianperfitt/Desktop/Movie-Catalog-Microservice-App/movie-catalog-service/src/main/java/com/example/moviecatalogservice/models/Rating.java
+/Users/ianperfitt/Desktop/Movie-Catalog-Microservice-App/movie-catalog-service/src/main/java/com/example/moviecatalogservice/models/Movie.java
+/Users/ianperfitt/Desktop/Movie-Catalog-Microservice-App/movie-catalog-service/src/main/java/com/example/moviecatalogservice/models/UserRating.java
+/Users/ianperfitt/Desktop/Movie-Catalog-Microservice-App/movie-catalog-service/src/main/java/com/example/moviecatalogservice/resources/MovieCatalogResource.java
+/Users/ianperfitt/Desktop/Movie-Catalog-Microservice-App/movie-catalog-service/src/main/java/com/example/moviecatalogservice/MovieCatalogServiceApplication.java
