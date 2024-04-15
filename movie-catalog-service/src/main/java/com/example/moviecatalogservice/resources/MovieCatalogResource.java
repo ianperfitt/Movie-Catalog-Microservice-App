@@ -3,6 +3,8 @@ package com.example.moviecatalogservice.resources;
 import com.example.moviecatalogservice.models.CatalogItem;
 import com.example.moviecatalogservice.models.Movie;
 import com.example.moviecatalogservice.models.UserRating;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -30,6 +33,8 @@ public class MovieCatalogResource {
     // private WebClient.Builder webClientBuilder;
 
     @RequestMapping("/{userId}")
+    @CircuitBreaker(name = "get-catalog-fallback", fallbackMethod = "getCatalogFallback")
+    //@HystrixCommand(fallbackMethod = "getCatalogFallback")
     public List<CatalogItem> getCatalog(@PathVariable("userId") String userId) {
 
         // Get all related movie IDs for given userId
@@ -47,6 +52,10 @@ public class MovieCatalogResource {
             return new CatalogItem(movie.getName(), "Desc", rating.getRating());
         })
         .collect(Collectors.toList());
+    }
+
+    public List<CatalogItem> getCatalogFallback(@PathVariable("userId") String userId, Throwable throwable) {
+        return Arrays.asList(new CatalogItem("No movie","",0));
     }
 
 

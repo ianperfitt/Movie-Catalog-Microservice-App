@@ -11,13 +11,13 @@ import org.springframework.web.client.RestTemplate;
 public class MovieCatalogServiceApplication {
 
 	@Bean
-	// Does Service Discovery in a load balanced way
+	// Does Service Discovery in a load balanced
+	//	public RestTemplate getRestTemplate(way
 	@LoadBalanced
 	public RestTemplate getRestTemplate() {
 		HttpComponentsClientHttpRequestFactory clientHttpRequestFactory = new HttpComponentsClientHttpRequestFactory();
 		clientHttpRequestFactory.setConnectTimeout(3000);
 		return new RestTemplate(clientHttpRequestFactory);
-
 	}
 
 //	@Bean
@@ -27,6 +27,7 @@ public class MovieCatalogServiceApplication {
 //	}
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(MovieCatalogServiceApplication.class, args);
 	}
 
