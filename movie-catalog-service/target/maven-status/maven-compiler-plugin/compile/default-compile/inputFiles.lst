@@ -1,6 +1,8 @@
 /Users/ianperfitt/Desktop/Movie-Catalog-Microservice-App/movie-catalog-service/src/main/java/com/example/moviecatalogservice/models/CatalogItem.java
+/Users/ianperfitt/Desktop/Movie-Catalog-Microservice-App/movie-catalog-service/src/main/java/com/example/moviecatalogservice/services/MovieInfo.java
 /Users/ianperfitt/Desktop/Movie-Catalog-Microservice-App/movie-catalog-service/src/main/java/com/example/moviecatalogservice/models/Rating.java
 /Users/ianperfitt/Desktop/Movie-Catalog-Microservice-App/movie-catalog-service/src/main/java/com/example/moviecatalogservice/models/Movie.java
 /Users/ianperfitt/Desktop/Movie-Catalog-Microservice-App/movie-catalog-service/src/main/java/com/example/moviecatalogservice/models/UserRating.java
 /Users/ianperfitt/Desktop/Movie-Catalog-Microservice-App/movie-catalog-service/src/main/java/com/example/moviecatalogservice/resources/MovieCatalogResource.java
+/Users/ianperfitt/Desktop/Movie-Catalog-Microservice-App/movie-catalog-service/src/main/java/com/example/moviecatalogservice/services/UserRatingInfo.java
 /Users/ianperfitt/Desktop/Movie-Catalog-Microservice-App/movie-catalog-service/src/main/java/com/example/moviecatalogservice/MovieCatalogServiceApplication.java

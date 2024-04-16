@@ -1,5 +1,7 @@
+com/example/moviecatalogservice/services/UserRatingInfo.class
 com/example/moviecatalogservice/models/Movie.class
 com/example/moviecatalogservice/models/CatalogItem.class
+com/example/moviecatalogservice/services/MovieInfo.class
 com/example/moviecatalogservice/models/Rating.class
 com/example/moviecatalogservice/resources/MovieCatalogResource.class
 com/example/moviecatalogservice/MovieCatalogServiceApplication.class

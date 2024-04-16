@@ -4,7 +4,9 @@ import com.example.moviecatalogservice.models.CatalogItem;
 import com.example.moviecatalogservice.models.Movie;
 import com.example.moviecatalogservice.models.Rating;
 import com.example.moviecatalogservice.models.UserRating;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.example.moviecatalogservice.services.MovieInfo;
+import com.example.moviecatalogservice.services.UserRatingInfo;
+import com.netflix.discovery.converters.Auto;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -29,45 +31,32 @@ public class MovieCatalogResource {
     @Autowired
     private DiscoveryClient discoveryClient;
 
+    @Autowired
+    MovieInfo movieInfo;
+
+    @Autowired
+    UserRatingInfo userRatingInfo;
+
     // For Reactive demo
     // @Autowired
     // private WebClient.Builder webClientBuilder;
 
     @RequestMapping("/{userId}")
-    @CircuitBreaker(name = "get-catalog-fallback", fallbackMethod = "getCatalogFallback")
     //@HystrixCommand(fallbackMethod = "getCatalogFallback")
     public List<CatalogItem> getCatalog(@PathVariable("userId") String userId) {
 
         // Make call to movie info service for each
         // movieid in ratings to get movie name
         // and combine with rating from ratings list
-        UserRating userRating = getUserRating(userId);
+        UserRating userRating = userRatingInfo.getUserRating(userId);
         return userRating.getRatings().stream()
-                .map(rating -> {
-                    return getCatalog(rating);
-                }).collect(Collectors.toList())
+                .map(rating -> movieInfo.getCatalogItem(rating))
+                .collect(Collectors.toList());
     }
 
-    private CatalogItem getCatalogItem(Rating rating) {
-        Movie movie = restTemplate.getForObject("http://movie-info-service/movies/" + rating.getMovieId(), Movie.class);
-        return new CatalogItem(movie.getName(), "Desc", rating.getRating());
-    }
-
-    private UserRating getUserRating(@PathVariable("userId") String userId) {
-        // Get all related movie IDs for given userId
-        // and create Rating objects using that data
-        // This would usually be done with call to database
-        // but is hardcoded as project is focused on microservices
-        return restTemplate.getForObject("http://ratings-data-service/ratingsdata/users/foo" + userId, UserRating.class);
-
-    }
-
-
-
-    public List<CatalogItem> getCatalogFallback(@PathVariable("userId") String userId, Throwable throwable) {
-        return Arrays.asList(new CatalogItem("No movie","",0));
-    }
-
+//    public List<CatalogItem> getCatalogFallback(@PathVariable("userId") String userId, Throwable throwable) {
+//        return Arrays.asList(new CatalogItem("No movie","",0));
+//    }
 
     // Reactive demo code
         // Movie movie = webClientBuilder.build()
