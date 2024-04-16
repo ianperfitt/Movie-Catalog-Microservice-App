@@ -6,11 +6,11 @@ public class UserRating {
 
     private List<Rating> userRating;
 
-    public List<Rating> getUserRating() {
+    public List<Rating> getRatings() {
         return userRating;
     }
 
-    public void setUserRating(List<Rating> userRating) {
+    public void setRatings(List<Rating> userRating) {
         this.userRating = userRating;
     }
 }
